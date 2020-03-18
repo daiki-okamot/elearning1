@@ -1,10 +1,9 @@
 class MoviesController < ApplicationController
+  before_action :set_movie, only: [ :show, :edit, :update, :destroy]
   
   def index
     @movies = Movie.order(created_at: :desc)
   end
-
-  
   
   def new
     @movie = Movie.new # フォーム用の空のインスタンスを生成する。
@@ -29,15 +28,15 @@ class MoviesController < ApplicationController
   end
 
   def show
-    @movie = Movie.find(params[:id])
+    
   end
 
   def edit
-    @movie = Movie.find(params[:id])
+    
   end
 
   def update
-    @movie = Movie.find(params[:id])
+    
     if @movie.update(movie_params)
       redirect_to @movie, notice: "投稿を更新しました。"
     else
@@ -46,7 +45,7 @@ class MoviesController < ApplicationController
   end
 
   def destroy
-    @movie = Movie.find(params[:id])
+    
     @movie.destroy
     redirect_to movies_path, notice: "投稿を削除しました。"
   end
@@ -55,5 +54,9 @@ class MoviesController < ApplicationController
 
   def movie_params # ストロングパラメータを定義する
     params.require(:movie).permit(:title)
+  end
+
+  def set_movie
+    @movie = Movie.find(params[:id])
   end
 end
