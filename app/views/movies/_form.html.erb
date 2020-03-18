@@ -1,8 +1,13 @@
 <%= form_with model: movie, local:true do |f| %>
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_area :title, class: "form-control", rows: "7" %>
+    <%= f.text_field :title, class: "form-control", rows: "7" %>
+    <%= f.label :url %>
+    <%= f.text_field :url, class: "form-control", rows: "7" %>
   </div>
+
+
+
   <p>
     <%= f.submit class: "btn btn-block btn-primary" %>
   </p>
