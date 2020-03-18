@@ -1,10 +1,11 @@
 class MoviesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_movie, only: [ :show, :edit, :update, :destroy]
   
   def index
     @movies = Movie.order(created_at: :desc)
   end
-  
+
   def new
     @movie = Movie.new # フォーム用の空のインスタンスを生成する。
   end
