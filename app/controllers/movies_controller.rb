@@ -4,6 +4,7 @@ class MoviesController < ApplicationController
   
   def index
     @movies = Movie.order(created_at: :desc)
+    @comment = Comment.new
   end
 
   def new
@@ -29,7 +30,7 @@ class MoviesController < ApplicationController
   end
 
   def show
-    
+    @comment = Comment.new
   end
 
   def edit

@@ -1,10 +1,29 @@
 <div class="col-6 mx-auto">
+  
   <% @movies.each do |movie| %>
     
     <%= link_to movie.title, movie %>
     <%# <%= link_to 'Edit', edit_movie_path(movie) %>
     <%# <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    
+    <hr>
+
+    <% movie.comments.last(3).each do |comment| %>
+      <p>
+        <%= comment.user.name %>
+        <%= truncate(comment.body, length: 30) %>
+      </p>
+    <% end %>
+    
+    
+    
+    
+    <%= form_with model: @comment, url: comments_path, class: "form-group row mx-auto ", local: true do |f| %>
+      <%= f.hidden_field :movie_id, value: movie.id %>
+      <%= f.text_field :body, class: "col-8 form-control" %>
+      <%= f.submit t(".submit"), class: "col-4" %>
+    <% end %>
     <hr>
   <% end %>
 </div>
