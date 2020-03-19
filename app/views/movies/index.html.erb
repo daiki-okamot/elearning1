@@ -1,12 +1,10 @@
 <div class="col-6 mx-auto">
   <% @movies.each do |movie| %>
     
-    <%= movie.title %>
+    <%= link_to movie.title, movie %>
+    <%# <%= link_to 'Edit', edit_movie_path(movie) %>
+    <%# <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
     <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    <%= link_to 'Show', movie %>
-    <%= link_to 'Edit', edit_movie_path(movie) %>
-    <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
-    
+    <hr>
   <% end %>
 </div>

@@ -2,17 +2,18 @@
   <div class="card mb-3">
     <div class="row no-gutters">
       <div class="col-lg-7">
-        <% if @movie.url.present? %>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        <% else %>
-          <%= image_tag "no_image", class: "card-img" %>
-        <% end %>
-      </div>
-      <div class="col-lg-7">
         <div class="card-body scroll">
           <%= simple_format (@movie.title) %>
         </div>
       </div>
+      <div class="col-lg-7">
+        <% if @movie.url.present? %>
+          <iframe width="728" height="400" src="https://www.youtube.com/embed/<%= @movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% else %>
+          <%= image_tag "no_image", class: "card-img" %>
+        <% end %>
+      </div>
+
     </div>
   </div>
   <p>
