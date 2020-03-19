@@ -11,7 +11,7 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = Movie.new(movie_params) # ストロングパラメータを引数に
+    @movie = current_user.movies.new(movie_params)
     url = params[:movie][:url]
     url = url.last(11)
     @movie.url = url
