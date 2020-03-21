@@ -1,0 +1,65 @@
+// Place all the styles related to the top controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+// .bg-image {
+//   background-image: url(3000.jpeg);
+//   background-size: cover;
+//   // height: 100%;
+//   width: 100%;
+// }
+
+.bg-image {
+  /* 画像ファイルの指定 */
+  background-image: url(3000.jpeg);
+   
+  /* 画像を常に天地左右の中央に配置 */
+  background-position: center center;
+   
+  /* 画像をタイル状に繰り返し表示しない */
+  background-repeat: no-repeat;
+   
+  /* コンテンツの高さが画像の高さより大きい時、動かないように固定 */
+  background-attachment: fixed;
+   
+  /* 表示するコンテナの大きさに基づいて、背景画像を調整 */
+  // background-size: cover;
+   
+  /* 背景画像が読み込まれる前に表示される背景のカラー */
+  background-color: #464646;
+
+}
+
+
+button {
+  height: 100px;
+  width: 500px;
+  font-size: 1.4em;
+  font-weight: bold;
+  padding: 10px 30px;
+  background-color: #3cb371;
+  color: #fff;
+  border-style: none;
+}
+
+
+
+// button {
+//   display: inline-block;
+//   color: #fff;
+//   background: linear-gradient(to bottom, #3cb371, #2e8b57);
+//   font-size: 18px;
+//   font-weight: 500;
+//   padding: 12px 26px;
+//   border-radius: 100px;
+//   /* A transparent border added for the outline button variation */
+//   border: 3px solid transparent;
+//   text-decoration: none;
+//   background-origin: border-box;
+// }
+
+// .button--outline {
+//   background: transparent;
+//   color: var(--color-brand-primary);
+//   border-color: var(--color-brand-primary);
+// }

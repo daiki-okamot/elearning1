@@ -52,6 +52,8 @@ class MoviesController < ApplicationController
     redirect_to movies_path, notice: "投稿を削除しました。"
   end
 
+
+
   private
 
   def movie_params # ストロングパラメータを定義する

@@ -1,11 +1,11 @@
 ja:
-  posts:
+  movies:
     form:
       back: 戻る
-      post: 投稿する
+      movie: 投稿する
     new:
-      title: New Post
-    post:
+      title: New Movie
+    movie:
       delete: 削除
       submit: コメント
     show:
