@@ -1,8 +1,8 @@
-<div class="text">
-  <div class="col-6">
+<div class="">
+  <div class="col-6 ">
 
     <% @movies.each do |movie| %>
-      
+      <br>
       <%= link_to movie.title, movie %>
       <%# <%= link_to 'Edit', edit_movie_path(movie) %>
       <%# <%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -28,7 +28,7 @@
         <%= f.text_field :body, class: "col-6 form-control" %>
         <%= f.submit t(".submit"), class: "col-4" %>
       <% end %>
-      <hr>
+      
     <% end %>
   </div>
 </div>

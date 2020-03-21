@@ -5,6 +5,9 @@ ja:
       movie: 投稿する
     new:
       title: New Movie
+    index:
+      submit: コメント
+      delete: 削除
     movie:
       delete: 削除
       submit: コメント

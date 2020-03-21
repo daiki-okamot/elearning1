@@ -1,12 +1,12 @@
 <div class="row">
   <div class="col-lg-12 mx-auto">
-    <div class="logo col-lg-12 mb-3 text-center">
+    <div class="logo col-lg-6 mb-3 text-center">
       <h1>編集</h1>
     </div>
 
     <%# <div class="card"> %>
       <div class="row no-gutters">
-        <div class="col-lg-6">
+        <div class="col-lg-12 mx-auto">
           <% if @movie.url.present? %>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           <% else %>
@@ -15,7 +15,7 @@
         </div>
       </div>
     <%# </div> %>
-      <div class="col-lg-12 card-cody">
+      <div class="col-lg-6 card-cody">
         <%= render "form", movie: @movie %>
       </div>
   </div>

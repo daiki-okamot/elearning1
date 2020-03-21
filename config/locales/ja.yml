@@ -1,7 +1,7 @@
 ja:
   activerecord:
     attributes:
-      comment:
+      comment: 
         body: コメント
       movie:
         title: タイトル
