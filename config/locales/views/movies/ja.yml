@@ -1,0 +1,17 @@
+ja:
+  movies:
+    form:
+      back: 戻る
+      movie: 投稿する
+    new:
+      title: New Movie
+    index:
+      submit: コメント
+      delete: 削除
+    movie:
+      delete: 削除
+      submit: コメント
+    show:
+      edit: 編集する
+      delete: 投稿削除
+      submit: コメント

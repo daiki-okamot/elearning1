@@ -1,0 +1,58 @@
+<div class="col-lg-8">
+  <div class=>
+    <div class="row no-gutters">
+      <div class="col-lg-7">
+        <div class="">
+          <h2>
+            <%= simple_format (@movie.title) %>
+          </h2>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <% if @movie.url.present? %>
+          <iframe width="930" height="520" src="https://www.youtube.com/embed/<%= @movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <% else %>
+          <%= image_tag "no_image", class: "card-img" %>
+        <% end %>
+        <% @movie.comments.each do |comment| %>
+          <p>
+            <%= comment.user.name %>
+            <%= comment.body %>
+          </p>
+        <% end %>
+      </div>
+
+          <%# <%= form_with model: @comment, url: comments_path, class: "row mx-auto ", local: true do |f| %>
+            <%# <%= f.hidden_field :movie_id, value: @movie.id %> 
+            <%# <%= f.text_field :body, class: "col-8 form-control" %> 
+            <%# <%= f.submit t(".submit"), class: "col-4" %> 
+          <%# <% end %> 
+
+    </div>
+  </div>
+  <p>
+    <%= link_to t(".edit"), edit_movie_path(@movie), method: :get, class: "btn btn-block btn-primary" %>
+  </p>
+  <p>
+    <%= button_tag t(".delete"), class: "btn btn-block btn-warning", data: { toggle: "modal", target: "#delete-movie" } %>
+  </p>
+<div class="modal fade" id="delete-movie">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">投稿削除</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= @movie.url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p><%= "投稿を削除しますか？" %></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+        <%= link_to "削除", movie_path(@movie), method: :delete, class: "btn btn-danger" %>
+      </div>
+    </div>
+  </div>
+</div>

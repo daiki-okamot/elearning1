@@ -1,0 +1,15 @@
+ja:
+  activerecord:
+    attributes:
+      comment: 
+        body: コメント
+      movie:
+        title: タイトル
+        image: 投稿画像
+      user:
+        avatar: プロフィール画像
+        description: 自己紹介
+        email: メールアドレス
+        name: 名前
+        password: パスワード
+        username: ユーザー名
